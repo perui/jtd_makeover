@@ -1,0 +1,22 @@
+@import '../../styles';
+
+
+.navbar-brand {
+  font-size: 1rem;
+  img {
+    margin: auto;
+    height: 1.5rem;
+    margin-right: 20px;
+  }
+  @include media-breakpoint-up(md) {
+    display: block;
+    font-size: 1.25rem;
+    img {
+      height: 3rem;
+    }
+  }
+}
+nav {
+
+  border-bottom: 7px solid #da6eca;
+}

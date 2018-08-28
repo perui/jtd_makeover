@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/scss/bootstrap-reboot';
+@import '~bootstrap/scss/bootstrap';
+
+
+@import
+'~bootstrap/scss/functions',
+'~bootstrap/scss/variables',
+'~bootstrap/scss/mixins',
+  //'~bootstrap/scss/print',
+  //'~bootstrap/scss/reboot',
+'~bootstrap/scss/type';
+
+body{
+  background-color: #e0d9d9;
+}
+
