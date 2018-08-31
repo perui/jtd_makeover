@@ -21,3 +21,22 @@
     </div>
   </ng-template>
 </ngb-carousel>
+
+
+
+<div class="todos" *ngIf="showcaseList">
+<ngb-carousel class="todos">
+    <ng-template ngbSlide *ngFor="let Showcase of showcaseList">
+     <img src="https://picsum.photos/900/500?image=220" alt="Random first slide">
+      <div class="carousel-caption">
+        <h3>{{Showcase.title}}</h3>
+        <p>{{Showcase.description}}</p>
+
+</div>
+    </ng-template>
+
+
+
+
+</ngb-carousel>
+</div>

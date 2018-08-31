@@ -1,5 +1,7 @@
+import Showcase from '../model/showcase.model';
 import {Component, OnInit} from '@angular/core';
 import {HttpClient } from '@angular/common/http';
+import {ShowcaseService} from '../../services/showcase.service';
 import {map} from 'rxjs/operators';
 
 @Component({
@@ -10,9 +12,18 @@ import {map} from 'rxjs/operators';
 export class HomeCarouselComponent implements OnInit {
   images: Array<string>;
 
-  constructor(private _http: HttpClient ) {}
-
+  constructor(private _http: HttpClient, private showcaseService: ShowcaseService ) {}
+  showcaseList: Showcase[]
   ngOnInit() {
+
+    this.showcaseService.getShowcases()
+      .subscribe(showcases => {
+        //assign the todolist property to the proper http response
+        this.showcaseList = showcases
+        console.log(showcases)
+      })
+
+
     this._http.get('https://picsum.photos/list')
       .pipe(map((images: Array<{id: number}>) => this._randomImageUrls(images)))
       .subscribe(images => this.images = images);

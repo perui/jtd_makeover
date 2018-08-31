@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HomeCarouselComponent } from './home/home-carousel/home-carousel.component';
+import {ShowcaseService} from './services/showcase.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { HomeCarouselComponent } from './home/home-carousel/home-carousel.compon
     AppRoutingModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    ShowcaseService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
