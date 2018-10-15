@@ -1,10 +1,9 @@
 import Showcase from '../model/showcase.model';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import {Response} from '@angular/http';
 import { Injectable } from '@angular/core';
-
-import { map } from 'rxjs/operators';
+import { map } from 'rxjs/operators/';
 
 @Injectable()
 export class ShowcaseService {
@@ -29,8 +28,8 @@ export class ShowcaseService {
         //Maps the response object sent from the server
 
         return res["data"].docs as Showcase[];
-      });
-      )
+      }));
+
 
   }
   //Update todo, takes a ToDo Object as parameter
@@ -44,9 +43,9 @@ export class ShowcaseService {
     //Delete the object by the id
     let deleteUrl = `${this.showcaseUrl}/${id}`;
     return this.http.delete(deleteUrl)
-      .map(res  => {
+      .pipe(map(res  => {
         return res;
-      });
+      }));
   }
 
   //Default Error handling method.

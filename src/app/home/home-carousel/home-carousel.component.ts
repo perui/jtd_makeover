@@ -1,4 +1,4 @@
-import Showcase from '../model/showcase.model';
+import Showcase from '../../model/showcase.model';
 import {Component, OnInit} from '@angular/core';
 import {HttpClient } from '@angular/common/http';
 import {ShowcaseService} from '../../services/showcase.service';
@@ -20,7 +20,7 @@ export class HomeCarouselComponent implements OnInit {
       .subscribe(showcases => {
         //assign the todolist property to the proper http response
         this.showcaseList = showcases
-        console.log(showcases)
+        console.log(showcases);
       })
 
 
@@ -36,3 +36,4 @@ export class HomeCarouselComponent implements OnInit {
     });
   }
 }
+
